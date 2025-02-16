@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektorat Alderblick - Professionelles Lektorat & Übersetzungen</title>
+    <meta name="description"
+        content="Anne Alder, freie Lektorin. Individuelles Lektorat, Korrektorat und Übersetzung von Textprojekten. Kontaktieren Sie mich für professionelle Unterstützung.">
+    <meta name="keywords" content="Lektorat, Korrektorat, Übersetzung, Texte verbessern, Germanistik, Anglistik">
+    <meta name="author" content="Anne Alder">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lektorat-alderblick.de">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="vertical-nav">
+        <ul>
+            <li data-section="Home" data-target="#home"></li>
+            <li data-section="Über mich" data-target="#about"></li>
+            <li data-section="Referenzen" data-target="#referenzen"></li>
+            <li data-section="Leistungen" data-target="#leistungen"></li>
+            <li data-section="Ablauf" data-target="#ablauf"></li>
+            <li data-section="Kontakt" data-target="#contact"></li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-primary" style="background-color: #46868c;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white dynamic-hover" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white dynamic-hover" aria-current="page" href="#about">Über
+                            mich</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white dynamic-hover" href="#referenzen">Referenzen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white dynamic-hover" href="#leistungen">Leistungen & Preise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white dynamic-hover" href="#ablauf">Ablauf</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white dynamic-hover" href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="parallax">
+        <div class="overlay">
+            <div class="flex-container">
+                <div class="left"></div>
+                <div class="content text-center">
+                    <h1 class="animate-pop-in">Lektorat Alder<span class="highlight">blick</span></h1>
+                    <p class="animate-pop-in">
+                        <a href="#leistungen" data-target="#lektorat" class="scroll-to-tab clickable-text"
+                            style="color: white;">Lektorat</a> |
+                        <a href="#leistungen" data-target="#korrektorat" class="scroll-to-tab clickable-text"
+                            style="color: white;">Korrektorat</a> |
+                        <a href="#leistungen" data-target="#uebersetzung" class="scroll-to-tab clickable-text"
+                            style="color: white;">Übersetzung</a>
+                    </p>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scrollArrow" class="scroll-arrow">
+        <span>&#x2193;</span>
+    </div>
+
+    <div class="modal fade" id="werdegangModal" tabindex="-1" aria-labelledby="werdegangModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="werdegangModalLabel">Meine Qualifikationen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="vfll-logo-container">
+                        <a href="https://www.vfll.de" target="_blank">
+                            <img src="images/VFLL_Wort-Bild-Marke_rot.png"
+                                alt="Mitglied im VFLL - Verband der Freien Lektorinnen und Lektoren"
+                                class="vfll-logo-modal">
+                        </a>
+                        <p class="vfll-text">
+                            Ich bin als zertifizierte <b><a href="https://www.lektoren.de/profil/anne-alder-m"
+                                    class="clickable-text" target="_blank">Freie Lektorin ADM derzeit Kandidatin im VFLL
+                                    <span class="link-symbol">↗</span></a></b>.
+                        </p>
+                    </div>
+
+                    <div class="qualifikationen-grid">
+                        <div class="qualifikationen-item">
+                            <div id="vfllCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner carousel-size">
+                                    <div class="carousel-item active" style="padding: 5px;">
+                                        <a href="documents/Zertifikat_Freie_Lektorin_ADM.pdf" target="_blank">
+                                            <img src="images/Freie_Lektorin_ADM_I.jpg" class="d-block w-100"
+                                                alt="Freie Lektorin ADM">
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item" style="padding: 5px;">
+                                        <a href="documents/Zertifikat_Freie_Lektorin_ADM.pdf" target="_blank">
+                                            <img src="images/Freies_Lektorat_I.jpg" class="d-block w-100"
+                                                alt="Freies Lektorat I: Sicher redigieren">
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item" style="padding: 5px;">
+                                        <a href="documents/Zertifikat_Freie_Lektorin_ADM.pdf" target="_blank">
+                                            <img src="images/Freies_Lektorat_II.jpg" class="d-block w-100"
+                                                alt="Freies Lektorat II: Positionierung, Angebotserstellung, Kommunikation">
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item" style="padding: 5px;">
+                                        <a href="documents/Zertifikat_Freie_Lektorin_ADM.pdf" target="_blank">
+                                            <img src="images/Freies_Lektorat_III.jpg" class="d-block w-100"
+                                                alt="Freies Lektorat III: Texte professionell bearbeiten">
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#vfllCarousel"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#vfllCarousel"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <p><b>Freie Lektorin ADM</b><br>
+                                (I) Sicher redigieren<br>(II) Positionierung, Angebotserstellung und
+                                Kommunikation<br>(III) Texte professionell bearbeiten</p>
+                        </div>
+                        <div class="qualifikationen-item">
+                            <div style="padding: 5px;">
+                                <a href="documents/Zeugnis_Master.pdf" target="_blank">
+                                    <img src="images/Zeugnis_Master.png" class="d-block w-100"
+                                        alt="Masterurkunde Vorschau">
+                                </a>
+                            </div>
+                            <p><b>Masterurkunde</b><br>Erfolgreicher Abschluss des Masterstudiums in Anglistik und
+                                Germanistik (Note 1,3)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2>Herzlich Willkommen!</h2>
+                    <br>
+                    <p>Mein Name ist <b>Anne Alder</b>. Seit jeher ein „Bücherwurm“ mit großem Interesse an Sprache(n)
+                        und Literatur, habe ich nach einer Ausbildung zur Fremdsprachenassistentin ein
+                        <b class="clickable-text" data-bs-toggle="modal" data-bs-target="#werdegangModal">Masterstudium
+                            der Anglistik und Germanistik <span class="link-symbol">↗</span></b> erfolgreich absolviert.
+                        In dieser Zeit beschäftigte ich mich intensiv mit literarischen Werken unterschiedlicher
+                        Gattungen
+                        und Epochen sowie mit linguistischen Fragestellungen. Unter anderem erforschte ich linguistische
+                        Besonderheiten verschiedener regionaler Dialekte und Varietäten wie des Berlinischen und des
+                        Kiezdeutschen. In meiner Abschlussarbeit setzte ich mich mit modernen Shakespeare-Adaptionen
+                        auseinander.
+                    </p>
+
+                    <p>Während meines Werdegangs arbeitete ich als <b>Übersetzerin und redaktionelle Mitarbeiterin</b>
+                        für die englische Seite eines Internetprojekts der Ganske Verlagsgruppe
+                        (<i>Ticcats</i>). Als Fremdsprachenassistentin einer Anwaltskanzlei habe ich viele Schriftsätze
+                        und Vertragsdokumente vom
+                        Englischen ins Deutsche übersetzt und Texte in den Bereichen Marken-, Urheber- und Patentrecht
+                        lektoriert. Mein <b>organisatorisches Geschick</b> und meine <b>Genauigkeit</b> kommen mir bei
+                        meiner
+                        Tätigkeit als Lektorin zugute.</p>
+
+                    <p>Als <b class="clickable-text" data-bs-toggle="modal"
+                            data-bs-target="#werdegangModal">zertifizierte Lektorin (ADM) <span
+                                class="link-symbol">↗</span></b> begleite ich ihr Schreibprojekt mit fachlichem
+                        <b>Know-how und Kreativität</b> und sorge dafür,
+                        dass Ihr Text sein volles Potenzial entfalten kann.
+                    </p>
+
+                    <!-- Button hinzugefügt -->
+                    <a class="btn btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#werdegangModal">Qualifikationen</a>
+                    <a href="#contact" class="btn btn-outline-primary">Kontakt aufnehmen</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="images/me.png" alt="Freie Lektorin Anne Alder mit Germanistik- und Anglistik-Hintergrund"
+                        class="me-image img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="referenzen" class="section">
+        <div class="container">
+            <h2 class="mb-5">Referenzen</h2>
+            <div class="reference-grid">
+                <div class="reference-item" data-bs-toggle="modal" data-bs-target="#referenceModal1">
+                    <img src="images/references/MutZumAufbruch.jpg" alt="Mut zum Aufbruch">
+                    <div class="hand-icon">
+                        <i class="bi bi-hand-index-thumb"></i>
+                    </div>
+                </div>
+                <div class="reference-item" data-bs-toggle="modal" data-bs-target="#referenceModal2">
+                    <img src="images/references/Venro_german.png" alt="Venro German">
+                    <div class="hand-icon">
+                        <i class="bi bi-hand-index-thumb"></i>
+                    </div>
+                </div>
+                <div class="reference-item" data-bs-toggle="modal" data-bs-target="#referenceModal3">
+                    <img src="images/references/Venro_englisch.png" alt="Venro German">
+                    <div class="hand-icon">
+                        <i class="bi bi-hand-index-thumb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="referenceModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mut zum Aufbruch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Das <b>Lektorat</b> für <i>Mut zum Aufbruch</i> der <a
+                            href="https://www.pauluskirche-altona.de/gruppen/biografiewerkstatt" target="_blank">
+                            Biografiewerkstatt Hamburg <span class="link-symbol">↗</span> </a> lag
+                        mir besonders am Herzen. Die zwölf auf Interviews basierenden Biografien mit bewegenden
+                        Lebensgeschichten sollten jeweils für sich stehen,
+                        indem sie den persönlichen Ton und Duktus der Interviewten wiedergeben, und dennoch ein
+                        stimmiges Gesamtskonzept ergeben.
+                        Der Artikel von Bettina Albrod bietet einen schönen Eindruck von dem Projekt und eine
+                        Vorstellung einiger daran beteiligter Personen.
+                    </p>
+                    <div class="downloadable-image">
+                        <a href="images/references/lebendige_rueckblicke.png" download="lebendige_rueckblicke.png">
+                            <img src="images/references/lebendige_rueckblicke.png" alt="Mut zum Aufbruch"
+                                class="img-fluid rounded shadow">
+                            <div class="download-overlay">
+                                <i class="bi bi-download"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <br><br>
+                    <div class="downloadable-image mb-4"></div>
+                    <img src="images/references/MutZumAufbruch.jpg" alt="Mut zum Aufbruch"
+                        class="img-fluid rounded shadow"><br><br>
+                    <img src="images/references/MutZumAufbruch_Rueckseite.jpg" alt="Mut zum Aufbruch"
+                        class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="referenceModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">VENRO: An einem Strang ziehen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ein <b>Lektorat</b> mit besonderem Fokus auf fachliche Präzision und gendergerechte Sprache:</p>
+                    <p><i><b>An einem Strang ziehen</b>: Wie wir in der Bildung für nachhaltige Entwicklung
+                            machtkritisch international zusammenarbeiten können.</i> (<a
+                            href="https://venro.org/publikationen/detail/an-einem-strang-ziehen"
+                            target="_blank">Publikation ansehen <span class="link-symbol">↗</span></a>)</p>
+                    <img src="images/references/Venro_german.png" alt="VENRO: AN EINEM STRANG ZIEHEN"
+                        class="img-fluid rounded shadow"><br><br>
+                    <img src="images/references/Venro_german_2.png"
+                        alt="VENRO: AN EINEM STRANG ZIEHEN - Inhaltsverzeichnis" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="referenceModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">VENRO: Pulling together</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <p>Ein <b>Übersetzungslektorat</b> mit besonderem Fokus auf fachliche Präzision und
+                            gendergerechte Sprache:</p>
+                        <p><i><b>Pulling together</b>: How to establish power-critical international collaboration in
+                                Education for Sustainable Development.</i> (<a
+                                href="https://venro.org/publikationen/detail/an-einem-strang-ziehen"
+                                target="_blank">Publikation ansehen <span class="link-symbol">↗</span></a>)</p>
+                        <img src="images/references/Venro_englisch.png" alt="VENRO: PULLING TOGETHER"
+                            class="img-fluid rounded shadow"><br><br>
+                        <img src="images/references/Venro_englisch_2.png" alt="VENRO: PULLING TOGETHER - Content"
+                            class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Vergrößertes Bild" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="leistungen" class="section">
+        <div class="container">
+            <!-- Übersichtstext -->
+            <h2 class="mb-4">Leistungen & Preise</h2>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p>
+                        Ein Buch ist die Axt, die gewissermaßen das gefrorene Meer in uns aufbricht, um neue Bedeutungen
+                        hervorzubringen. Ursprünglich ein Zitat von Kafka, trifft diese metaphorische Umschreibung die
+                        Bedeutung von (fiktionalen) Texten sehr gut. Ich helfe Ihnen, das metaphorische Eis zu brechen
+                        und Ihr Manuskript der gewünschten Leserschaft zugänglich zu machen. Im besten Fall entsteht
+                        <b>ein Text, der beim Lesen neue Bedeutungen erzeugt und über sich selbst hinausweist</b>.
+                    </p>
+                    <p>
+                        Mein Fachgebiet ist das belletristische Lektorat, insbesondere <b>Romane</b>,
+                        <b>Kurzgeschichten</b>,
+                        <b>Kinderbücher</b> und
+                        <b>Theaterstücke</b>. Im Bereich Non-Fiction liegen meine Schwerpunkte auf
+                        <b>(Auto-)Biografien</b>
+                        und <b>Texten aus dem Kulturbereich</b>.
+                    </p>
+                    <p>
+                        Neben dem Lektorat übernehme ich <b>Übersetzungen vom Englischen ins Deutsche</b>. Nach der
+                        Maxime „So nah am Text wie möglich, so frei jedoch wie nötig“, gilt es, das richtige Maß
+                        zwischen wörtlicher Übersetzung und freier Gestaltung bzw. (kontextabhängiger) Umschreibung zu
+                        finden. Ziel ist es, den Stil des Ausgangstextes zu treffen und einen Text zu erschaffen, der
+                        dem Leser das gleiche Erlebnis wie das Original bietet. Schwerpunkte meiner
+                        Übersetzungstätigkeit sind belletristische Texte, Sachtexte, wissenschaftliche Publikationen und
+                        Texte aus dem Kulturbereich sowie dem Online-Marketing.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="images/garden.jpg" alt="Symbolbild Leistungen" class="leistungen-image img-fluid">
+                </div>
+            </div>
+            <!-- Tabs -->
+            <div id="leistungs-tabs" class="leistungs-tabs">
+                <nav>
+                    <ul class="nav nav-pills" id="leistungenTabs" role="tablist">
+                        <button class="nav-link active" id="korrektorat-tab" data-bs-toggle="tab"
+                            data-bs-target="#korrektorat" type="button" role="tab" aria-controls="korrektorat"
+                            aria-selected="true">Korrektorat</button>
+                        <button class="nav-link" id="lektorat-tab" data-bs-toggle="tab" data-bs-target="#lektorat"
+                            type="button" role="tab" aria-controls="lektorat" aria-selected="false">Lektorat</button>
+                        <button class="nav-link" id="uebersetzung-tab" data-bs-toggle="tab"
+                            data-bs-target="#uebersetzung" type="button" role="tab" aria-controls="uebersetzung"
+                            aria-selected="false">Übersetzung</button>
+                    </ul>
+                </nav>
+
+
+                <!-- Tab-Inhalte -->
+                <div class="tab-content" id="leistungenTabContent">
+
+                    <!-- Korrektorat -->
+                    <div class="tab-pane fade show active" id="korrektorat" role="tabpanel"
+                        aria-labelledby="korrektorat-tab">
+                        <div class="row align-items-center">
+                            <div class="col-md-10">
+                                <p>
+                                    Beim Korrekturlesen stehen Rechtschreibung und Grammatik im Vordergrund.
+                                    Rechtschreib- und Tippfehler, grammatische Fehler und falsche Zeichensetzung werden
+                                    korrigiert. Ich überprüfe Ihren Text unter folgenden Gesichtspunkten:
+                                </p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a class="btn btn-outline-secondary btn-preise" data-bs-toggle="modal"
+                                    data-bs-target="#preiseKorrektoratModal">Preise</a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><b>Rechtschreibung</b>
+                                <ul>
+                                    <li>Rechtschreib- und Tippfehler</li>
+                                    <li>Groß-/Kleinschreibung</li>
+                                    <li>Zusammen-/Getrenntschreibung</li>
+                                    <li>Anglizismen und Fremdwörter (sofern nicht als stilistisches Mittel
+                                        intendiert)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><b>Interpunktion</b>
+                                <ul>
+                                    <li>Punkt- und Kommasetzung</li>
+                                    <li>Bindestrich vs. Gedankenstrich</li>
+                                    <li>Anführungszeichen</li>
+                                </ul>
+                            </li>
+                            <li><b>Grammatik</b>
+                                <ul>
+                                    <li>Satzbau und Satzbezüge</li>
+                                    <li>Zeit- und Verbformen</li>
+                                    <li>Deklination</li>
+                                    <li>Indirekte/Direkte Rede</li>
+                                    <li>Konjunktiv</li>
+                                </ul>
+                            </li>
+                            <li><b>Einheitlichkeit und Formalien</b>
+                                <ul>
+                                    <li>Konsistente Verwendung von Begriffen</li>
+                                    <li>Zahlen, Fachausdrücke, Abkürzungen</li>
+                                    <li>Schreibvarianten</li>
+                                    <li>Einheitliche Quellenangaben und Zitierweisen (v.a. Sachtext)</li>
+                                    <li>Positionierung und Beschriftung von Grafiken, Tabellen und Bildern</li>
+                                    <li>Absätze und Seitenumbrüche</li>
+                                    <li>Fußnoten</li>
+                                    <li>Formatierung und Layout: Fließtext, Überschriften, (Block)Zitate, Beschriftungen
+                                        <br>
+                                        (je nach Bedarf und Vorgaben)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><b>Formalien</b>
+                                <ul>
+                                    <li>Grafiken und Bildunterschriften</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Lektorat -->
+                    <div class="tab-pane fade" id="lektorat" role="tabpanel" aria-labelledby="lektorat-tab">
+                        <div class="row align-items-center">
+                            <div class="col-md-10">
+                                <p>
+                                    Neben der Korrektur der Rechtschreibung und Grammatik wird der Text inhaltlich und
+                                    stilistisch geprüft und „feingeschliffen“. Beim (inhaltlichen) Lektorat steht die
+                                    Frage im
+                                    Vordergrund, ob das Manuskript in sich schlüssig ist und (vor allem bei Sachtexten)
+                                    die Daten und Fakten stimmen. Bei stilistische Schwächen wie
+                                    Wortwiederholungen oder Schachtelsätze werden entsprechende
+                                    Alternativvorschläge gemacht. Ich nehme ferner den Plot und die Figuren genauer
+                                    unter die Lupe. Im Einzelnen sehe ich Ihren Text nach folgenden Kriterien durch:
+                                </p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a class="btn btn-outline-secondary btn-preise" data-bs-toggle="modal"
+                                    data-bs-target="#preiseLektoratModal">Preise</a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><b>Rechtschreibung, Zeichensetzung, Grammatik</b>
+                                <ul>
+                                    <li>Alle Leistungen (wenn gewünscht) aus dem <a href="#korrektorat"
+                                            class="see-korrektorat clickable-text" role="button">Korrektorat <span
+                                                class="link-symbol">↗</span></a></li>
+                                </ul>
+                            </li>
+                            <li><b>Inhalt</b>
+                                <ul>
+                                    <li>Stimmigkeit der Handlung und Figurencharakterisierung</li>
+                                    <li>Einhaltung der Erzählperspektive</li>
+                                    <li>Zielgruppengerechte Sprache und Inhalte</li>
+                                    <li>Daten- und Faktencheck (v.a. Sachbuch, Biografie)</li>
+
+                                </ul>
+                            </li>
+                            <li><b>Stil</b>
+                                <ul>
+                                    <li>Einheitlichkeit der Erzählzeiten</li>
+                                    <li>Vermeidung von Schachtel- und Bandwurmsätzen („und“-Verbindungen),
+                                        (Wort-)Wiederholungen und Aneinanderreihungen (z.B. „Und dann...“)</li>
+                                    <li>Stimmige Verwendung von Metaphern, Vergleichen und Idiomen</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Übersetzung -->
+                    <div class="tab-pane fade" id="uebersetzung" role="tabpanel" aria-labelledby="uebersetzung-tab">
+                        <div class="row align-items-center">
+                            <div class="col-md-10">
+                                <p>
+                                    „Heißer Ziegenkäse und Salat mit Wahnsinnigen“, was klingt wie ein Gericht aus einem
+                                    Harry Potter Film, ist in Wirklichkeit die (maschinelle?) Übersetzung einer
+                                    Speisekarte: <i>hot goat cheese with lettuce and nuts</i>. Im Prinzip richtig
+                                    übersetzt (nuts = [ugs.] verrückt), ist das Verb in diesem Kontext fehl am Platz.
+                                    Auch wenn dies ein extremes Beispiel ist, so zeigt es doch sehr deutlich die
+                                    wichtigste Eigenschaft einer guten Übersetzung: Man merkt ihr nicht an, dass es eine
+                                    Übersetzung ist. Wichtig ist die sprachliche Richtigkeit und dass die Übersetzung
+                                    Ihrer Intention entspricht.
+                                </p>
+                                <p>
+                                    Neben der Übersetzung vom Englischen ins Deutsche übernehme ich das Lektorat bereits
+                                    übersetzter Texte. Beim Übersetzungslektorat wird meistens nicht mehr gestalterisch
+                                    eingegriffen, da der der Inhalt bereits feststeht. Wie bei der Übersetzung ist es
+                                    das Ziel, einen Text zu produzieren, der so klingt, als sei es ein
+                                    deutscher Text.
+                                </p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a class="btn btn-outline-secondary btn-preise" data-bs-toggle="modal"
+                                    data-bs-target="#preiseUebersetzungModal">Preise</a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><b>Übersetzung</b>
+                                <ul>
+                                    <li>Präzise Inhalte</li>
+                                    <li>Balance zwischen wörtlicher Übersetzung und freier Umschreibung</li>
+                                    <li>Stilistik und Ton des Originals</li>
+                                </ul>
+                            </li>
+                            <li><b>Übersetzungslektorat</b>
+                                <ul>
+                                    <li>Verbesserung von Übersetzungsfehlern</li>
+                                    <li>Feinschliff der Sprache</li>
+                                    <li>Fakten- und Datenüberprüfung</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="modal fade" id="preiseKorrektoratModal" tabindex="-1" aria-labelledby="preiseModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preiseModalLabel">Preise für Ihr Korrektorat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Die Kosten für ein Korrektorat belaufen sich auf <b>5 bis 6 Euro pro Normseite</b>. Wie beim
+                        Lektorat
+                        spielen die Qualität und die Art des Ausgangstextes eine Rolle bei der Kostenkalkulation.
+                    </p>
+
+                    <p>Alle Preise gelten pro Normseite: 30 Zeilen à max. 60 Anschläge, 1500 Zeichen inkl. Leerzeichen
+                        (nähere Informationen und Vorlagen unter: <a
+                            href="https://www.literaturcafe.de/normseite-dokumentvorlage-download/"
+                            target="_blank">Literaturcafe <i>Die Normseite</i> <span class="link-symbol">↗</span></a>)
+                    </p>
+                    <p>
+                        Absprachen mit Ihnen (in Form von Telefonaten und/oder E-Mail-Austausch) sind Teil der
+                        Leistungserbringung und werden nicht separat berechnet.
+                    </p>
+                    <p>
+                        Für ein unverbindliches Angebot, nehmen Sie gerne <a href="#contact"
+                            class="link-to-contact">Kontakt</a> auf.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="preiseLektoratModal" tabindex="-1" aria-labelledby="preiseModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preiseModalLabel">Preise für Ihr Lektorat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Die Kosten für das Lektorat liegen zwischen <b>5 und 8 EUR pro Normseite für den ersten
+                            Durchgang</b>,
+                        abhängig vom Arbeitsaufwand, der Qualität des Ausgangstextes und der Art des Textes. Der
+                        <b>zweite
+                            Bearbeitungsdurchgang</b> beläuft sich auf <b>30 % des ersten Bearbeitungsdurchgangs</b>.
+                    </p>
+
+                    <p>Alle Preise gelten pro Normseite: 30 Zeilen à max. 60 Anschläge, 1500 Zeichen inkl. Leerzeichen
+                        (nähere Informationen und Vorlagen unter: <a
+                            href="https://www.literaturcafe.de/normseite-dokumentvorlage-download/"
+                            target="_blank">Literaturcafe <i>Die Normseite</i> <span class="link-symbol">↗</span></a>)
+                    </p>
+                    <p>
+                        Absprachen mit Ihnen (in Form von Telefonaten und/oder E-Mail-Austausch) sind Teil der
+                        Leistungserbringung und werden nicht separat berechnet.
+                    </p>
+                    <p>
+                        Für ein unverbindliches Angebot, nehmen Sie gerne <a href="#contact"
+                            class="link-to-contact">Kontakt</a> auf.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="preiseUebersetzungModal" tabindex="-1" aria-labelledby="preiseModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preiseModalLabel">Preise für Ihre Übersetzung</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Die Kosten für eine Übersetzung vom Englischen ins Deutsche sowie für ein Übersetzungslektorat
+                        liegen bei <b>8 bis 9 EUR pro Normseite</b>.
+                    </p>
+
+                    <p>Alle Preise gelten pro Normseite: 30 Zeilen à max. 60 Anschläge, 1500 Zeichen inkl. Leerzeichen
+                        (nähere Informationen und Vorlagen unter: <a
+                            href="https://www.literaturcafe.de/normseite-dokumentvorlage-download/"
+                            target="_blank">Literaturcafe <i>Die Normseite</i> <span class="link-symbol">↗</span></a>)
+                    </p>
+                    <p>
+                        Absprachen mit Ihnen (in Form von Telefonaten und/oder E-Mail-Austausch) sind Teil der
+                        Leistungserbringung und werden nicht separat berechnet.
+                    </p>
+                    <p>
+                        Für ein unverbindliches Angebot, nehmen Sie gerne <a href="#contact"
+                            class="link-to-contact">Kontakt</a> auf.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="ablauf" class="section">
+        <div class="container">
+            <h2 class="mb-4">Ablauf</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-pop-in">
+                    <h4>1. Kontaktaufnahme</h4>
+                    <p>
+                        Senden Sie mir eine <b><a href="#contact" class="clickable-text">Nachricht <span
+                                    class="link-symbol">↗</span></a></b>, um den ersten Schritt zu machen. Teilen Sie
+                        mir den Umfang Ihres Manuskripts und Ihre Wünsche mit.
+                    </p>
+                </div>
+                <div class="timeline-item animate-pop-in">
+                    <h4>2. Textauszug</h4>
+                    <p>
+                        Schicken Sie mir einen <b>Textauszug</b>, idealerweise <b>2-3 Seiten aus dem Mittelteil</b>
+                        Ihres Manuskripts. Dieser hilft mir, die Qualität des Textes zu bewerten.
+                    </p>
+                </div>
+                <div class="timeline-item animate-pop-in">
+                    <h4>3. Probelektorat</h4>
+                    <p>
+                        Ich führe ein <b>kostenloses Probelektorat</b> durch. Änderungen und Vorschläge dokumentiere ich
+                        im Änderungsmodus (Word) oder mit Kommentaren (PDF). So sehen Sie direkt meine Arbeitsweise.
+                    </p>
+                </div>
+                <div class="timeline-item animate-pop-in">
+                    <h4>4. Angebot</h4>
+                    <p>
+                        Auf Basis des Probelektorats erstelle ich ein <b>unverbindliches Angebot</b> mit einem
+                        <b>Kostenvoranschlag</b>. Stimmen Sie zu, beginne ich mit dem Lektorat.
+                    </p>
+                </div>
+                <div class="timeline-item animate-pop-in">
+                    <h4>5. Zwei Durchgänge</h4>
+                    <p>
+                        Das Lektorat umfasst in der Regel zwei Durchgänge. Nach dem ersten Durchgang sende ich Ihnen den
+                        Text mit meinen Anmerkungen zurück. Nach Ihrer Rückmeldung erfolgt die finale Korrektur.
+                    </p>
+                </div>
+                <div class="timeline-item animate-pop-in">
+                    <h4>6. Optionaler Feinschliff</h4>
+                    <p>
+                        Für den letzten Schliff biete ich eine <b>dritte Korrektur</b> an. Dies besprechen wir
+                        individuell, je nach Ihren Bedürfnissen und dem Textstatus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Form ID -->
+                <input type="hidden" name="access_key" value="a8eaf305-e11c-41ad-98cb-f5a02fccdff1">
+
+                <!-- Name -->
+                <label for="name">Ihr Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- E-Mail -->
+                <label for="email">Ihre E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Nachricht -->
+                <label for="message">Ihre Nachricht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <!-- Submit Button -->
+                <button type="submit">Nachricht senden</button>
+            </form>
+
+            <div class="direct-email">
+                <p>Sie können mich auch direkt über meine E-Mail-Adresse kontaktieren:</p>
+                <a href="mailto:kontakt@lektorat-alderblick.de" class="btn btn-outline-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383L8.243 9.198a.5.5 0 0 1-.486 0L1 5.383V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.383z" />
+                    </svg>
+                    kontakt@lektorat-alderblick.de
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Button to trigger the modal -->
+    <footer class="custom-footer text-center py-4">
+        <div class="container">
+            <a href="#" class="impressum-link" data-bs-toggle="modal" data-bs-target="#impressumModal">
+                Impressum
+            </a>
+        </div>
+    </footer>
+
+    <!-- Impressum Modal -->
+    <div class="modal fade" id="impressumModal" tabindex="-1" aria-labelledby="impressumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="impressumModalLabel">Impressum</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>Impressum</h1>
+                    <p> Lektorat Alderblick<br>
+                        Anne Alder <br>
+                        Eidelstedter Weg 63<br>
+                        20255 Hamburg <br>
+                        Deutschland <br>
+                    </p>
+                    <p> <strong>Vertreten durch: </strong><br>
+                        Anne Alder<br>
+                    </p>
+                    <p><strong>Kontakt:</strong> <br>
+                        Telefon: +49 152 273 888 65<br>
+                        E-Mail: <a href='mailto:kontakt@lektorat-alderblick.de'>kontakt@lektorat-alderblick.de</a></br>
+                        Website: www.lektorat-alderblick.de
+                    </p>
+                    <p>USt. wird nicht ausgewiesen (Kleinunternehmerregelung).</p>
+                    <p><strong>Haftungsausschluss: </strong><br><br>
+
+                        <strong>Haftung für Inhalte</strong><br><br>
+                        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+                        Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als
+                        Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den
+                        allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch
+                        nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach
+                        Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur
+                        Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
+                        hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis
+                        einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
+                        Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br>
+
+                        <strong>Haftung für Links</strong><br><br>
+                        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss
+                        haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+                        Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+                        verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche
+                        Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+                        erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
+                        Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen
+                        werden wir derartige Links umgehend entfernen.<br><br>
+
+                        <strong>Urheberrecht</strong><br><br>
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+                        deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                        Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+                        jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
+                        nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber
+                        erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter
+                        als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam
+                        werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
+                        werden wir derartige Inhalte umgehend entfernen.<br><br>
+
+                        <strong>Datenschutz</strong><br><br>
+                        Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich.
+                        Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder
+                        eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.
+                        Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. <br>
+                        Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per
+                        E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch
+                        Dritte ist nicht möglich. <br>
+
+                        Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
+                        Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird
+                        hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich
+                        rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch
+                        Spam-Mails, vor.<br><br>
+
+                        <strong>Verwendung des externen Services "web3forms"</strong><br><br>
+                        Diese Seite nutzt zur Übermittlung der im Kontaktformular eingegebenen Informationen den Dienst
+                        Web3Forms. Anbieter ist die <a href="https://web3forms.com/" target="_blank"> Web3Forms Inc.</a>, ein Dienstleister, der die gesendeten Formulardaten
+                        ohne Speicherung direkt an eine E-Mail-Adresse weiterleitet.
+                        Web3Forms speichert keine personenbezogenen Daten der Nutzer und verarbeitet nur die zur
+                        E-Mail-Weiterleitung erforderlichen Informationen. Der Anbieter dieser Seite hat keinen Einfluss
+                        auf die Weiterleitung durch Web3Forms.
+                        Die Nutzung von Web3Forms dient der Kontaktaufnahme mit uns über das von uns angebotene
+                        Kontaktformular. Dies stellt ein berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO
+                        dar.
+
+                    <ul>
+                        <li>web3forms Datenschutzerklärung: <a href="https://www.web3forms.com/privacy"
+                                target="_blank">https://www.web3forms.com/privacy</a></li>
+                        <li>web3forms Bedingungen: <a href="https://web3forms.com/terms"
+                                target="_blank">https://web3forms.com/terms</a></li>
+                    </ul>
+
+                    <br>
+                    Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a
+                        href="https://www.kanzlei-hasselbach.de/rechtsgebiete/familienrecht/">Kanzlei Hasselbach,
+                        Fachanwälte für Familienrecht</a>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button id="scrollToTopBtn" class="btn btn-primary position-fixed"
+        style="bottom: 20px; right: 20px; display: none;">
+    </button>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

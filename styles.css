@@ -1,0 +1,1124 @@
+:root {
+    --color-primary-rgb: 95, 158, 160;
+    --color-secondary-rgb: 121, 202, 207;
+    --color-tertiary-rgb: 233, 247, 246;
+    --color-quaternary-rgb: 249, 249, 249;
+    --color-primary: rgb(var(--color-primary-rgb));
+    --color-secondary: rgb(var(--color-secondary-rgb));
+    --color-tertiary: rgb(var(--color-tertiary-rgb));
+    --color-quaternary: rgb(var(--color-quaternary-rgb));
+    --color-font-bright: white;
+    --color-font-dark: #333;
+    --color-contrast: #fac8b4;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Navigation */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.nav-link:hover {
+    color: var(--color-tertiary) !important;
+}
+
+.nav-link.dynamic-hover {
+    transition: transform 0.3s ease, color 0.3s ease !important;
+    /* Vorrang */
+}
+
+.nav-link.dynamic-hover:hover {
+    transform: scale(1.05) !important;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px;
+    /* Fügt Abstand zwischen den Links hinzu */
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+    /* Entfernt den Abstand beim letzten Element */
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.7s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.parallax {
+    /* The image used */
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("images/background.jpg");
+
+    /* Set a specific height */
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+.parallax:env(safari) {
+    background-attachment: scroll;
+}
+
+.flex-container {
+    display: flex;
+    /* Flexbox für gleichmäßige Höhenverteilung */
+    width: 100%;
+}
+
+.parallax .overlay {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+.parallax .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Breite über den gesamten Viewport */
+    height: 100%;
+    /* Höhe, die dem Inhalt entspricht */
+    background: rgba(var(--color-primary-rgb), 0.60);
+    /* Halbtransparenter schwarzer Balken */
+    z-index: -1;
+    /* Hinter dem Text */
+}
+
+.left,
+.right {
+    flex-grow: 1;
+    /* Restlichen Platz gleichmäßig auffüllen */
+    flex-basis: 0;
+    /* Basisbreite auf 0 setzen, um Platzverteilung zu ermöglichen */
+}
+
+.right {
+    background: rgba(var(--color-primary-rgb), 0.60);
+}
+
+.parallax h1 {
+    font-size: 3rem;
+    color: var(--color-font-bright);
+    margin: 0;
+    font-weight: bold;
+    animation-delay: 0s;
+}
+
+.parallax p {
+    font-size: 1.5rem;
+    color: var(--color-font-bright);
+    margin-top: 1rem;
+    animation-delay: 0.5s;
+}
+
+.animate-pop-in {
+    animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+    opacity: 0;
+}
+
+@keyframes fade-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes rotate-up {
+    100% {
+        transform: rotateZ(-4deg);
+    }
+}
+
+.scroll-arrow {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    font-size: 2rem;
+    color: var(--color-primary);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.scroll-arrow:hover {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    font-size: 2rem;
+    color: var(--color-primary);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.scroll-arrow:hover {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+
+#referenzen, #ablauf {
+    background: var(--color-tertiary);
+}
+
+#contact {
+    background: var(--color-quaternary);
+}
+
+#leistungen {
+    background: white;
+}
+
+#about {
+    position: relative;
+    background: linear-gradient(160deg, white 75%, var(--color-quaternary) 25%);
+    padding: 50px 0;
+}
+
+#about h2 {
+    color: var(--color-primary);
+}
+
+#about p {
+    color: var(--color-font-dark);
+}
+
+#about .row>.col-md-8 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#about.visible .row>.col-md-8 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+b {
+    color: var(--color-primary);
+}
+
+/* Text */
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    margin-left: 0px;
+}
+
+@media (max-width: 768px) {
+    ul {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    display: block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background: var(--color-primary);
+}
+
+#scrollToTopBtn {
+    z-index: 1000;
+    /* Damit er über anderen Elementen bleibt */
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
+    position: relative;
+    /* Für die Ausrichtung des Pfeils */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scrollToTopBtn::before {
+    content: '↑';
+    /* Der Pfeil */
+    font-size: 1.5rem;
+    /* Größe des Pfeils */
+    color: white;
+    /* Farbe des Pfeils */
+    line-height: 1;
+    display: block;
+    text-align: center;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.05);
+    /* Vergrößert den Button um 20% */
+}
+
+.vertical-nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.vertical-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vertical-nav ul li {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.vertical-nav ul li:hover {
+    transform: scale(1.5);
+    background-color: var(--color-primary);
+}
+
+.vertical-nav ul li.active {
+    background-color: var(--color-secondary);
+    transform: scale(1.3);
+}
+
+.vertical-nav ul li:hover::before {
+    content: attr(data-section);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: var(--color-font-dark);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .vertical-nav {
+        display: none;
+    }
+}
+
+@media (max-height: 768px) {
+    .vertical-nav {
+        display: none;
+    }
+}
+
+.highlight {
+    color: var(--color-contrast);
+    /* Auffällige Farbe */
+    font-weight: bold;
+    /* Fettdruck */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    /* Schattierung */
+    font-style: italic;
+    /* Kursiv */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Animationseffekte */
+}
+
+.btn-outline-secondary {
+    border-color: var(--color-primary) !important;
+    /* Rahmenfarbe */
+    color: var(--color-primary) !important;
+    /* Schriftfarbe */
+    margin: 0px 0px 5px 0px;
+    /* Abstand: oben, rechts, unten, links */
+}
+
+/* Ändere die Farben beim Hover-Effekt */
+.btn-outline-secondary:hover {
+    background-color: var(--color-primary) !important;
+    /* Hintergrundfarbe beim Hover */
+    color: var(--color-font-bright) !important;
+    /* Schriftfarbe beim Hover */
+    border-color: var(--color-primary) !important;
+    /* Rahmenfarbe beim Hover */
+}
+
+.btn-outline-primary {
+    border-color: var(--color-primary) !important;
+    background-color: var(--color-primary) !important;
+    color: var(--color-font-bright) !important;
+    margin: 0px 0px 5px 0px;
+}
+
+.btn-outline-primary:hover {
+    background-color: white !important;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.direct-email {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.direct-email a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Impressum */
+
+.custom-footer {
+    background: var(--color-tertiary);
+    color: var(--color-font-dark);
+    /* Schriftfarbe passend zum Hintergrund */
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.impressum-link {
+    color: var(--color-font-dark);
+    /* Linkfarbe */
+    text-decoration: none;
+    /* Entfernt die Unterstreichung */
+    font-weight: bold;
+    /* Optional: Fett hervorheben */
+    transition: color 0.3s ease;
+    /* Farbänderung beim Hover */
+    cursor: pointer;
+    /* Zeigt die typische Linkhand an */
+}
+
+.impressum-link:hover {
+    color: var(--color-secondary);
+    /* Hover-Farbe */
+    text-decoration: none;
+    /* Sicherstellen, dass beim Hover keine Unterstreichung erscheint */
+}
+
+/* Zertifikate */
+
+.clickable-text {
+    color: var(--color-primary);
+    /* Farbe eines Links */
+    cursor: pointer;
+    /* Zeigt den Zeiger an */
+    text-decoration: none;
+    /* Unterstreicht den Text */
+}
+
+.clickable-text:hover {
+    color: var(--color-secondary);
+    /* Dunklere Farbe bei Hover */
+}
+
+.modal-title {
+    color: var(--color-primary);
+}
+
+.modal-body h6 {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--color-font-dark);
+}
+
+.modal-footer .btn-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-font-bright);
+    border: none;
+}
+
+.vfll-logo-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.vfll-logo-modal {
+    height: 150px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.vfll-text {
+    color: var(--color-font-dark);
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+.qualifikationen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Flexible Spalten */
+    gap: 20px;
+    /* Abstand zwischen den Elementen */
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.qualifikationen-item {
+    text-align: center;
+}
+
+.qualifikationen-item img {
+    width: 100%;
+    max-width: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.qualifikationen-item img:hover {
+    transform: scale(1.02);
+}
+
+.qualifikationen-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--color-font-dark);
+}
+
+.qualifikationen-item a {
+    text-decoration: none;
+    /* Entfernt die Standard-Unterstreichung */
+}
+
+/* Allgemeines Styling für die Tabs */
+
+.leistungs-tabs {
+    background-color: white;
+    padding: 0.5rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-pills .nav-link {
+    color: var(--color-primary);
+    /* Anpassung der Farben */
+    border: 1px solid var(--color-primary);
+    background-color: white;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px 5px 0 0;
+    /* Abgerundete Ecken oben */
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--color-primary) !important;
+    /* Aktiver Tab */
+    color: white !important;
+    border: 1px solid var(--color-primary);
+    font-weight: bold;
+}
+
+/* Zusätzlicher Hover-Effekt für die Tabs */
+.nav-pills .nav-link:hover {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Rahmen und Schatten für die Tab-Inhalte */
+.tab-content {
+    margin-top: 0;
+    /* Entfernt den Abstand */
+    background-color: white;
+    /* Hintergrundfarbe beibehalten */
+    border-radius: 0px 0px 5px 5px;
+    /* Abgerundete Ecken unten */
+    border-color: white !important;
+    /* Rahmenfarbe */
+    padding: 20px;
+    /* Innenabstand */
+}
+
+
+/* Liste innerhalb der Tabs */
+ul {
+    padding-left: 20px;
+    /* Einzug für Listen */
+}
+
+ul li {
+    margin-bottom: 8px;
+    /* Abstand zwischen den Listenpunkten */
+}
+
+ul li b {
+    color: var(--color-primary);
+    /* Markierung von wichtigen Texten */
+}
+
+/* Auflistung der Unterpunkte */
+ul li ul {
+    list-style-type: disc;
+    /* Punktierte Unterlisten */
+    margin-left: 20px;
+    /* Einzug für Unterlisten */
+}
+
+ul li ul li {
+    margin-bottom: 5px;
+}
+
+/* Überschriften in den Tab-Inhalten */
+.tab-pane h3 {
+    color: var(--color-primary);
+    /* Primärfarbe für die Überschrift */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Einführungstext */
+.section p.lead {
+    font-size: 1.2rem;
+    color: var(--color-font-dark);
+    /* Angenehme Schriftfarbe */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Margins für die Elemente */
+.section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.section h2::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--color-tertiary);
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 50px;
+    /* Abstand zum Karussell */
+    margin-top: 50px
+}
+
+.image-wrapper img:hover {
+    transform: scale(1.05);
+    /* Vergrößert das Bild leicht */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Optional: Schatteneffekt */
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 500px;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    /* Zeigt einen Klicksymbol-Mauszeiger an */
+    transition: transform 0.3s ease;
+    /* Sanfte Übergangsanimation */
+}
+
+@media (max-width: 768px) {
+    .image-wrapper img {
+        max-width: 75%;
+        /* Bildgröße auf Mobilgeräten verkleinern */
+    }
+}
+
+.carousel-inner {
+    text-align: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    /* Macht die Pfeile sichtbar, wenn der Hintergrund hell ist */
+}
+
+/* Styling für die Bildunterschrift */
+.image-caption {
+    font-size: 0.9rem;
+    /* Dezente Textgröße */
+    color: #6c757d;
+    /* Grauer Farbton */
+    text-align: right;
+    /* Rechtsbündig */
+    margin-top: 10px;
+    /* Abstand zum Bild */
+    margin-right: 15px;
+    /* Optional: Abstand von der rechten Seite */
+    font-style: italic;
+    /* Optional: Kursivschrift */
+}
+
+.image-caption a {
+    color: #6c757d;
+    /* Gleiche graue Farbe wie der Text */
+    text-decoration: none;
+    /* Kein Unterstreichen */
+}
+
+.image-caption a:hover {
+    color: #46868c;
+    /* Dezent farbige Änderung beim Hover */
+    text-decoration: none;
+    /* Optional: Unterstreichen beim Hover */
+}
+
+#imageModal .modal-body {
+    padding: 0;
+    text-align: center;
+}
+
+#imageModal .modal-content {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.leistungen-image {
+    border-radius: 10px;
+    /* Leicht abgerundete Ecken */
+    max-width: 300px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* Leichter Schatten */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.leistungen-image:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.12);
+    /* Schatten verstärken */
+}
+
+.modal-content a {
+    color: var(--color-primary);
+    /* Gleiche graue Farbe wie der Text */
+    text-decoration: none;
+    /* Kein Unterstreichen */
+}
+
+.modal-content a:hover {
+    color: #46868c;
+    /* Dezent farbige Änderung beim Hover */
+    text-decoration: none;
+    /* Optional: Unterstreichen beim Hover */
+}
+
+.btn-preise {
+    background-color: var(--color-primary) !important;
+    color: var(--color-font-bright) !important;
+    border: 2px solid var(--color-primary) !important;
+    /* Breite, Stil und Farbe des Rahmens */
+    font-size: large !important;
+    font-weight: bold;
+    /* Fetter Text */
+    padding: 10px 50px !important;
+    /* Angenehmes Innenabstand-Verhältnis */
+    border-radius: 8px;
+    /* Sanft abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Weicher Schatten */
+    transition: all 0.3s ease;
+    /* Sanfte Übergänge für Hover */
+}
+
+.btn-preise:hover {
+    background-color: white !important;
+    /* Hover-Hintergrundfarbe */
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    /* Rahmenbreite und -farbe */
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.timeline-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--color-primary);
+    top: 0;
+    left: 0;
+}
+
+.timeline-item h4 {
+    margin-top: 0;
+    color: var(--color-primary);
+    /* font-weight: bold; */
+}
+
+.timeline-item p {
+    margin: 0.5rem 0 0;
+    color: var(--color-font-dark);
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.reference-item {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Zeigt an, dass das Element interaktiv ist */
+}
+
+.reference-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.reference-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reference-item-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.reference-item::after {
+    content: "Weitere Details"; /* Text auf dem Overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0; /* Unsichtbar, bis Hover */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover sichtbar machen */
+.reference-item:hover::after {
+    opacity: 1;
+}
+
+.downloadable-image {
+    position: relative;
+    display: inline-block;
+}
+
+.downloadable-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.download-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
+    color: white;
+    width: 50px; /* Feste Breite für den Kreis */
+    height: 50px; /* Gleiche Höhe wie Breite */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Macht es rund */
+    font-size: 1.5rem; /* Größe des Symbols */
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Unsichtbar bis Hover */
+}
+
+/* Hover-Effekt für das Symbol */
+.downloadable-image:hover .download-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hand-icon {
+    position: absolute;
+    bottom: 10px; /* Abstand vom unteren Rand */
+    right: 10px; /* Abstand vom rechten Rand */
+    width: 40px; /* Exakte Breite */
+    height: 40px; /* Exakte Höhe */
+    background: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+    color: white; /* Farbe des Symbols */
+    border-radius: 50%; /* Macht den Hintergrund kreisförmig */
+    display: flex; /* Flexbox zur Zentrierung */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    font-size: 1.3rem; /* Größe des Symbols */
+    z-index: 10; /* Überlagert das Bild */
+    opacity: 0.8; /* Transparenz für den Kreis */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfter Hover-Effekt */
+    display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .hand-icon {
+        display: flex; /* Sichtbar machen */
+    }
+}
+
+/* Hover-Effekt */
+.reference-item:hover .hand-icon {
+    opacity: 1; /* Transparenz entfernen */
+    transform: scale(1.1);
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.timeline-item.animate-pop-in {
+    animation: pop-in 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.timeline-item:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.me-image {
+    width: 250px;
+    border-radius: 50%; 
+    margin-top: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.me-image:hover {
+    transform: scale(1.02); 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); 
+}
