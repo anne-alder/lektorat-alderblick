@@ -1,222 +1,99 @@
-// Smooth scrolling Funktion
-function smoothScrollTo(endY, duration) {
-    const startY = window.scrollY;
-    const distanceY = endY - startY;
-    let startTime = null;
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-    function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startY, distanceY, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
 
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-// DOMContentLoaded
-document.addEventListener('DOMContentLoaded', function () {
-    const aboutSection = document.querySelector('#about');
-    const scrollArrow = document.getElementById('scrollArrow');
-    const navItems = document.querySelectorAll('.vertical-nav ul li');
-    const links = document.querySelectorAll('nav a');
-    const targets = document.querySelectorAll('section, #home');
+const previouslyFocused = new Map();
 
-    // Scroll-Pfeil
-    if (scrollArrow) {
-        scrollArrow.addEventListener('click', function () {
-            if (aboutSection) {
-                smoothScrollTo(aboutSection.offsetTop, 1000);
-            }
-        });
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  previouslyFocused.set(id, document.activeElement);
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  const panel = modal.querySelector('.modal-panel');
+  if (panel) panel.focus();
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.hidden = true;
+  const openModals = document.querySelectorAll('.modal:not([hidden])');
+  if (!openModals.length) document.body.classList.remove('modal-open');
+  const previous = previouslyFocused.get(modal.id);
+  if (previous && typeof previous.focus === 'function') previous.focus();
+}
+
+document.querySelectorAll('[data-modal-open]').forEach((button) => {
+  button.addEventListener('click', () => openModal(button.getAttribute('data-modal-open')));
+});
+
+document.querySelectorAll('[data-modal-close]').forEach((button) => {
+  button.addEventListener('click', () => closeModal(button.closest('.modal')));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  const openModalElement = document.querySelector('.modal:not([hidden])');
+  if (openModalElement) closeModal(openModalElement);
+});
+
+document.querySelectorAll('img[data-fallback]').forEach((img) => {
+  img.addEventListener('error', () => {
+    const fallback = img.getAttribute('data-fallback');
+    if (fallback && img.src !== fallback) {
+      img.src = fallback;
     }
-
-    // Navigation-Links mit smooth scroll
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Verhindere Standardverhalten
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                smoothScrollTo(targetElement.offsetTop, 1000);
-            }
-        });
-    });
-
-    // Navigation-Klick (für vertikale Navigation)
-    navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const targetSelector = this.getAttribute('data-target');
-            const targetElement = document.querySelector(targetSelector);
-
-            if (targetElement) {
-                smoothScrollTo(targetElement.offsetTop, 1000);
-            }
-        });
-    });
-
-    // Initialisiere sichtbare Abschnitte
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        if (window.scrollY + window.innerHeight > section.offsetTop + 100) {
-            section.classList.add('visible');
-        }
-    });
+  }, { once: true });
 });
 
-// Scroll-Events
-window.addEventListener('scroll', function () {
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const sections = document.querySelectorAll('section');
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const scrollArrow = document.getElementById('scrollArrow');
-    const homeSection = document.querySelector('#home');
-    const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+const revealSelectors = [
+  '.hero-copy',
+  '.portrait-card',
+  '.trust-grid > div',
+  '.section-heading',
+  '.qualification-box',
+  '.service-card',
+  '.price-note',
+  '.reference-card',
+  '.timeline li',
+  '.direct-contact',
+  '.contact-form'
+];
 
-    // Sichtbarkeit der Abschnitte
-    sections.forEach(section => {
-        if (scrollPosition > section.offsetTop + 100) {
-            section.classList.add('visible');
-        }
-    });
+const revealTargets = revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector)));
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // "Nach oben"-Button
-    if (scrollToTopBtn) {
-        scrollToTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
-    }
+if (revealTargets.length) {
+  revealTargets.forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 70, 210)}ms`);
+  });
 
-    // "Scroll-Arrow" nur im Home-Bereich sichtbar
-    if (scrollArrow) {
-        if (window.scrollY < 100) {
-            scrollArrow.style.display = 'block'; // Einblenden in Home
-        } else {
-            scrollArrow.style.display = 'none'; // Ausblenden außerhalb von Home
-        }
-    }
-});
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealTargets.forEach((element) => element.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
 
-// "Nach oben"-Button
-document.getElementById("scrollToTopBtn").addEventListener("click", function () {
-    smoothScrollTo(0, 1000);
-});
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  }
+}
 
-// Navigation-Aktivität bei Scroll
-window.addEventListener('scroll', function () {
-    const navItems = document.querySelectorAll('.vertical-nav ul li');
-    const targets = document.querySelectorAll('section, #home');
-    let currentSection = '';
-
-    targets.forEach(target => {
-        const targetTop = target.offsetTop;
-        const targetHeight = target.offsetHeight;
-
-        if (
-            window.scrollY >= targetTop - targetHeight / 3 &&
-            window.scrollY < targetTop + targetHeight - targetHeight / 3
-        ) {
-            currentSection = target.getAttribute('id');
-        }
-    });
-
-    // Entferne und füge `active`-Klasse hinzu
-    navItems.forEach(item => {
-        const targetId = item.getAttribute('data-target').substring(1);
-        if (targetId === currentSection) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.querySelector('.navbar');
-    const homeSection = document.querySelector('#home');
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY < homeSection.offsetHeight) {
-            navbar.classList.remove('hidden'); // Navbar anzeigen
-        } else {
-            navbar.classList.add('hidden'); // Navbar ausblenden
-        }
-    });
-});
-
-document.querySelectorAll('[data-bs-toggle="modal"]').forEach(item => {
-    item.addEventListener('click', event => {
-        const src = item.getAttribute('data-bs-src'); // Holt die Bildquelle
-        const modalImage = document.getElementById('modalImage');
-        modalImage.setAttribute('src', src); // Setzt die Quelle im Modal
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".see-korrektorat").forEach(link => {
-        link.addEventListener("click", event => {
-            event.preventDefault(); // Verhindert das normale Linkverhalten
-            const tab = document.querySelector('#korrektorat-tab'); // Wählt den Korrektorat-Tab aus
-            const tabInstance = new bootstrap.Tab(tab); // Erstellt eine Bootstrap-Tab-Instanz
-            tabInstance.show(); // Aktiviert den Tab
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.link-to-contact').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Verhindert Standardverhalten
-            const modal = document.querySelector('.modal.show'); // Aktuell sichtbares Modal
-            const targetId = this.getAttribute('href').substring(1); // Ziel-Element ID
-            const targetElement = document.getElementById(targetId);
-
-            if (modal) {
-                const bootstrapModal = bootstrap.Modal.getInstance(modal);
-                bootstrapModal.hide(); // Schließt das Modal
-            }
-
-            // Wartezeit für Smooth Scrolling, bis das Modal geschlossen ist
-            setTimeout(() => {
-                if (targetElement) {
-                    smoothScrollTo(targetElement.offsetTop, 1000); // Scrollt flüssig
-                }
-            }, 300); // Zeit, die das Modal benötigt, um zu schließen
-        });
-    });
-});
-
-document.querySelectorAll('.scroll-to-tab').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // Ziel-Tab ermitteln
-        const targetTab = this.getAttribute('data-target');
-
-        // Scrollen zur Sektion "Leistungen"
-        const leistungenSection = document.querySelector('#leistungen');
-        leistungenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Beobachten, wann die Sektion vollständig sichtbar ist
-        const observer = new IntersectionObserver((entries, observer) => {
-            if (entries[0].isIntersecting) {
-                // Tab aktivieren
-                const tabLink = document.querySelector(`button[data-bs-target="${targetTab}"]`);
-                if (tabLink) {
-                    tabLink.click();
-                }
-                observer.disconnect(); // Beobachtung beenden
-            }
-        });
-
-        // Beobachtung starten
-        observer.observe(leistungenSection);
-    });
-});

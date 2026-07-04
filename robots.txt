@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lektorat-alderblick.de/sitemap.xml
